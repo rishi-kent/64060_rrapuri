@@ -1,0 +1,82 @@
+---
+title: "FML- 811283595"
+output: html_document
+date: "2023-09-10"
+---
+#part a - importing dataset 
+
+#datasource:https://www.kaggle.com/datasets/anshtanwar/current-daily-price-of-various-commodities-india
+
+```{r}
+
+mydata<-read.csv("C:/Users/rishi/OneDrive/Desktop/New folder/Price_Agriculture_commodities_Week.csv")
+mydata
+```
+#part b- descriptive statistics for numeric variables 
+
+```{r}
+summary(mydata)
+
+mean(mydata$Modal.Price)
+
+median(mydata$Modal.Price)
+
+
+min(mydata$Modal.Price)
+
+max(mydata$Modal.Price)
+
+sd(mydata$Modal.Price)
+
+var(mydata$Modal.Price)
+
+str(mydata$Modal.Price)
+
+```
+#part c -descriptive statistics for catergorical variables
+
+
+```{r}
+table(mydata$Variety)
+
+
+mydata$Commodity
+
+
+table(mydata$Commodity)
+
+
+str(mydata$Variety)
+
+```
+#part d - transforming variables
+
+```{r}
+log(mydata$Modal.Price)
+
+
+log(mydata$Min.Price)
+
+
+d<-mydata$Modal.Price-mydata$Max.Price-mydata$Min.Price-mean(mydata$Min.Price)/mean(mydata$Max.Price)
+d
+
+
+```
+
+#part e plotting of variable
+
+```{r}
+hist(mydata$Modal.Price,main="HISTOGRAM OF Modal.Price")
+
+```
+#part f - Scatterplot
+
+```{r}
+plot(mydata$Max.Price,mydata$Min.Price,main="scatterplot")
+```
+
+
+
+
+
